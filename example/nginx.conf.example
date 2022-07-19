@@ -1,0 +1,26 @@
+server {
+    listen 80;
+    root /usr/share/nginx/html;
+    index ${deploy_web_entry};
+
+    error_log /usr/local/error.log;
+    access_log /usr/local/access.log main;
+
+
+    location / {
+        try_files $uri $uri/ @fallback;
+        index index.html;
+        add_header Cache-Control no-cache;
+        add_header Access-Control-Allow-Origin *;
+    }
+
+    location @fallback {
+        rewrite ^.*$ /index.html break;
+        add_header Cache-Control no-cache;
+    }
+
+    # static files
+    location ~ .*\\.(?:ico|js|gif|jpe?g|png|css|js|mp3) {
+        expires max;
+    }
+}
