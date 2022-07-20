@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/ocpanda/deploy-web-entry/compare/v0.0.3...v0.0.4) (2022-07-20)
+
+
+### Bug Fixes
+
+* 修正pathValidate ([33eb83a](https://github.com/ocpanda/deploy-web-entry/commit/33eb83a0bed3b96fb6d76f96534f683f641c5e5e))
+
 ### 0.0.3 (2022-07-20)
 
 
