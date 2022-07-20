@@ -1,6 +1,6 @@
 {
   "name": "deploy-web-entry",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "make change app entry file name, without client site old cache",
   "main": "index.js",
   "author": "Black",
