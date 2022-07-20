@@ -1,8 +1,13 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "target": "esnext",
     "module": "esnext",
+    "target": "esnext",
+    "outDir": "./dist/",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceRoot": "./lib/",
+    "rootDir": "./lib/",
+    "sourceMap": true,
     "strict": true,
     "allowJs": true,
     "importHelpers": true,
@@ -11,7 +16,6 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "sourceMap": true,
     "noImplicitAny": false,
     "baseUrl": ".",
     "lib": ["esnext", "ES5", "ES6", "ES7"],

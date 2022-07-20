@@ -8,12 +8,7 @@ export const fileRebuilder = async ({ params }) => {
     await rebuildNginxFile({ params });
 };
 const rebuildEntryFile = async ({ entryFilePath, newEntryFilePath }) => {
-    try {
-        await fs.rename(entryFilePath, newEntryFilePath);
-    }
-    catch (e) {
-        console.warn(e);
-    }
+    await fs.rename(entryFilePath, newEntryFilePath);
 };
 const rebuildNginxFile = async ({ params }) => {
     const nginxContent = await readNginxIndexFile({ nginxPath: params.nginxPath });
@@ -35,11 +30,6 @@ const injectEntryFileNameToNginxConf = ({ nginxContent, newEntryFileName }) => {
 };
 const writeNginxConf = async ({ nginxContent, nginxPath }) => {
     const fileContentBuffer = new Uint8Array(Buffer.from(nginxContent));
-    try {
-        await fs.writeFile(nginxPath, fileContentBuffer);
-    }
-    catch (e) {
-        console.warn(e);
-    }
+    await fs.writeFile(nginxPath, fileContentBuffer);
 };
 //# sourceMappingURL=index.js.map
