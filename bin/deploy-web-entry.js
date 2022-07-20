@@ -328,11 +328,11 @@ var import_util3 = require("util");
 var import_fs4 = require("fs");
 var import_url = require("url");
 
-// node_modules/yargs-parser/build/lib/index.js
+// node_modules/yargs/node_modules/yargs-parser/build/lib/index.js
 var import_util = require("util");
 var import_path2 = require("path");
 
-// node_modules/yargs-parser/build/lib/string-utils.js
+// node_modules/yargs/node_modules/yargs-parser/build/lib/string-utils.js
 function camelCase(str) {
   const isCamelCase = str !== str.toLowerCase() && str !== str.toUpperCase();
   if (!isCamelCase) {
@@ -386,7 +386,7 @@ function looksLikeNumber(x) {
   return /^[-]?(?:\d+(?:\.\d*)?|\.\d+)(e[-+]?\d+)?$/.test(x);
 }
 
-// node_modules/yargs-parser/build/lib/tokenize-arg-string.js
+// node_modules/yargs/node_modules/yargs-parser/build/lib/tokenize-arg-string.js
 function tokenizeArgString(argString) {
   if (Array.isArray(argString)) {
     return argString.map((e) => typeof e !== "string" ? e + "" : e);
@@ -418,7 +418,7 @@ function tokenizeArgString(argString) {
   return args;
 }
 
-// node_modules/yargs-parser/build/lib/yargs-parser-types.js
+// node_modules/yargs/node_modules/yargs-parser/build/lib/yargs-parser-types.js
 var DefaultValuesForTypeKey;
 (function(DefaultValuesForTypeKey2) {
   DefaultValuesForTypeKey2["BOOLEAN"] = "boolean";
@@ -427,7 +427,7 @@ var DefaultValuesForTypeKey;
   DefaultValuesForTypeKey2["ARRAY"] = "array";
 })(DefaultValuesForTypeKey || (DefaultValuesForTypeKey = {}));
 
-// node_modules/yargs-parser/build/lib/yargs-parser.js
+// node_modules/yargs/node_modules/yargs-parser/build/lib/yargs-parser.js
 var mixin2;
 var YargsParser = class {
   constructor(_mixin) {
@@ -1267,7 +1267,7 @@ function stripQuotes(val) {
   return typeof val === "string" && (val[0] === "'" || val[0] === '"') && val[val.length - 1] === val[0] ? val.substring(1, val.length - 1) : val;
 }
 
-// node_modules/yargs-parser/build/lib/index.js
+// node_modules/yargs/node_modules/yargs-parser/build/lib/index.js
 var import_fs2 = require("fs");
 var minNodeVersion = process && process.env && process.env.YARGS_MIN_NODE_VERSION ? Number(process.env.YARGS_MIN_NODE_VERSION) : 12;
 if (process && process.version) {
@@ -5303,7 +5303,7 @@ var source_default = chalk;
 
 // lib/util/normalize.ts
 var pathValidate = (path) => {
-  const regex = /^\w+(\/\w+)*\.(htm(l*)|conf)$/g;
+  const regex = /^(\/)?\w+(\/\w+)*\.(htm(l*)|conf)$/g;
   const validated = regex.test(path);
   if (!validated)
     source_default.yellow(`
@@ -5312,7 +5312,7 @@ var pathValidate = (path) => {
   return validated;
 };
 var normalizeFolderPath = ({ path }) => {
-  path = path.replace(/(\\)+/g, "/").replace(/^\//g, "").replace(/\/$/g, "").replace(/(\/)+/g, "/");
+  path = path.replace(/(\\)+/g, "/").replace(/\/$/g, "").replace(/(\/)+/g, "/");
   return path;
 };
 var normalizePath = ({ path }) => {
@@ -5358,7 +5358,7 @@ var params_default = async () => {
 };
 
 // lib/util/file-rebuilder/index.ts
-var import_promises = __toESM(require("fs/promises"), 1);
+var import_promises = __toESM(require("fs/promises"));
 var import_buffer = require("buffer");
 var fileRebuilder = async ({ params }) => {
   await rebuildEntryFile({
